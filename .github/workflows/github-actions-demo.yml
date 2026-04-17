@@ -1,0 +1,23 @@
+name: GitHub Actions
+run-name: ${{ github.actor}} is testing out Github Actions
+on:
+  push:
+    branches: [ main ]
+jobs:
+  Explore-Github-Actions:
+  runs-on: ubuntu-latest
+  steps:
+    - run: echo "Hello world! This is my first Github Actions workflow"
+    - run: echo "I am learning how to use Github Actions"
+    - run: echo "This is so cool! I can automate my workflow with Github Actions"
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+    - name: Run a Python script
+      run: |
+        python main.py
